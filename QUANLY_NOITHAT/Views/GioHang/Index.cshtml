@@ -1,0 +1,131 @@
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+
+<div class="container py-5">
+    <h2 class="mb-4">GIỎ HÀNG CỦA BẠN</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="cart-items">
+                <!-- Cart Item 1 -->
+                <div class="cart-item mb-3 p-3 border rounded">
+                    <div class="row align-items-center">
+                        <div class="col-md-2">
+                            <img src="https://via.placeholder.com/100/95a5a6/ffffff?text=SP1" class="img-fluid rounded" alt="Sản phẩm">
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Sofa Góc Hiện Đại</h5>
+                            <p class="text-muted mb-0">Mã: SP001</p>
+                        </div>
+                        <div class="col-md-2">
+                            <strong class="text-danger">15.000.000đ</strong>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm">
+                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                <input type="text" class="form-control text-center" value="1">
+                                <button class="btn btn-outline-secondary" type="button">+</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-end">
+                            <strong>15.000.000đ</strong>
+                            <button class="btn btn-sm btn-danger mt-2">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Item 2 -->
+                <div class="cart-item mb-3 p-3 border rounded">
+                    <div class="row align-items-center">
+                        <div class="col-md-2">
+                            <img src="https://via.placeholder.com/100/7f8c8d/ffffff?text=SP2" class="img-fluid rounded" alt="Sản phẩm">
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Bàn Ăn 6 Ghế</h5>
+                            <p class="text-muted mb-0">Mã: SP002</p>
+                        </div>
+                        <div class="col-md-2">
+                            <strong class="text-danger">8.900.000đ</strong>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm">
+                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                <input type="text" class="form-control text-center" value="1">
+                                <button class="btn btn-outline-secondary" type="button">+</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-end">
+                            <strong>8.900.000đ</strong>
+                            <button class="btn btn-sm btn-danger mt-2">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <a asp-controller="SanPham" asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left"></i> Tiếp tục mua hàng
+                </a>
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">TỔNG ĐỐN HÀNG</h4>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Tạm tính:</span>
+                        <strong>23.900.000đ</strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Phí vận chuyển:</span>
+                        <strong class="text-success">Miễn phí</strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Giảm giá:</span>
+                        <strong class="text-danger">-500.000đ</strong>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-3">
+                        <h5>Tổng cộng:</h5>
+                        <h5 class="text-danger">23.400.000đ</h5>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Mã giảm giá">
+                        <button class="btn btn-outline-secondary w-100 mt-2">Áp dụng</button>
+                    </div>
+
+                    <a asp-controller="GioHang" asp-action="ThanhToan" class="btn btn-primary-custom w-100 btn-lg">
+                        THANH TOÁN
+                    </a>
+
+                    <div class="mt-3 text-center">
+                        <small class="text-muted">
+                            <i class="fas fa-shield-alt"></i> Thanh toán an toàn & bảo mật
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h6>Phương thức thanh toán</h6>
+                    <div class="payment-methods">
+                        <img src="https://via.placeholder.com/50x30/3498db/ffffff?text=VISA" class="me-2" alt="Visa">
+                        <img src="https://via.placeholder.com/50x30/e74c3c/ffffff?text=MC" class="me-2" alt="Mastercard">
+                        <img src="https://via.placeholder.com/50x30/27ae60/ffffff?text=ATM" alt="ATM">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

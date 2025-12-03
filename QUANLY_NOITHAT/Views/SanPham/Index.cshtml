@@ -1,0 +1,123 @@
+@{
+    ViewData["Title"] = "Sản phẩm";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <!-- Sidebar Filter -->
+        <div class="col-md-3">
+            <div class="filter-sidebar">
+                <h4>BỘ LỌC</h4>
+                <hr>
+                
+                <h5>Danh mục</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cat1">
+                    <label class="form-check-label" for="cat1">Phòng khách</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cat2">
+                    <label class="form-check-label" for="cat2">Phòng ngủ</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cat3">
+                    <label class="form-check-label" for="cat3">Phòng bếp</label>
+                </div>
+                
+                <hr>
+                <h5>Khoảng giá</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="price1">
+                    <label class="form-check-label" for="price1">Dưới 5 triệu</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="price2">
+                    <label class="form-check-label" for="price2">5 - 10 triệu</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="price3">
+                    <label class="form-check-label" for="price3">10 - 20 triệu</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="price4">
+                    <label class="form-check-label" for="price4">Trên 20 triệu</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product List -->
+        <div class="col-md-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3>TẤT CẢ SẢN PHẨM</h3>
+                <select class="form-select" style="width: 200px;">
+                    <option>Mới nhất</option>
+                    <option>Giá thấp đến cao</option>
+                    <option>Giá cao đến thấp</option>
+                    <option>Bán chạy nhất</option>
+                </select>
+            </div>
+
+            <div class="row">
+                @for (int i = 1; i <= 12; i++)
+                {
+                    <div class="col-md-4">
+                        <div class="product-card">
+                            <a asp-controller="SanPham" asp-action="Details" asp-route-id="SP@(i.ToString("000"))">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/300x250/95a5a6/ffffff?text=San+Pham+@i" alt="Sản phẩm @i">
+                                    @if (i % 3 == 0)
+                                    {
+                                        <span class="product-badge">-15%</span>
+                                    }
+                                </div>
+                            </a>
+                            <div class="product-info">
+                                <a asp-controller="SanPham" asp-action="Details" asp-route-id="SP@(i.ToString("000"))">
+                                    <h5 class="product-name">Sản phẩm nội thất @i</h5>
+                                </a>
+                                <div class="product-price">
+                                    @((i * 1500000).ToString("N0"))đ
+                                </div>
+                                <button class="btn-add-cart" data-product-id="SP@(i.ToString("000"))" data-product-name="Sản phẩm nội thất @i" data-product-price="@(i * 1500000)">
+                                    <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Pagination -->
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">«</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<style>
+.filter-sidebar {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.filter-sidebar h4 {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.filter-sidebar h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+</style>

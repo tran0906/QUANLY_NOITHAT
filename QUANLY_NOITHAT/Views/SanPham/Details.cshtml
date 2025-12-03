@@ -1,0 +1,175 @@
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <!-- Product Images -->
+        <div class="col-md-6">
+            <div class="product-detail-image mb-3">
+                <img src="https://via.placeholder.com/600x500/95a5a6/ffffff?text=San+Pham" alt="Sản phẩm" class="img-fluid rounded">
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <img src="https://via.placeholder.com/150/7f8c8d/ffffff?text=1" class="img-fluid rounded">
+                </div>
+                <div class="col-3">
+                    <img src="https://via.placeholder.com/150/95a5a6/ffffff?text=2" class="img-fluid rounded">
+                </div>
+                <div class="col-3">
+                    <img src="https://via.placeholder.com/150/bdc3c7/ffffff?text=3" class="img-fluid rounded">
+                </div>
+                <div class="col-3">
+                    <img src="https://via.placeholder.com/150/ecf0f1/333333?text=4" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-md-6">
+            <h2>Sofa Góc Hiện Đại Cao Cấp</h2>
+            <div class="product-rating mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star-half-alt text-warning"></i>
+                <span class="ms-2">(128 đánh giá)</span>
+            </div>
+
+            <h3 class="text-danger mb-3">15.000.000đ <del class="text-muted fs-5">18.000.000đ</del></h3>
+
+            <div class="mb-3">
+                <strong>Mã sản phẩm:</strong> SP001<br>
+                <strong>Tình trạng:</strong> <span class="text-success">Còn hàng</span><br>
+                <strong>Thương hiệu:</strong> Decor Pro
+            </div>
+
+            <div class="mb-3">
+                <h5>Màu sắc:</h5>
+                <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" name="color" id="color1" checked>
+                    <label class="btn btn-outline-secondary" for="color1">Xám</label>
+                    
+                    <input type="radio" class="btn-check" name="color" id="color2">
+                    <label class="btn btn-outline-secondary" for="color2">Nâu</label>
+                    
+                    <input type="radio" class="btn-check" name="color" id="color3">
+                    <label class="btn btn-outline-secondary" for="color3">Be</label>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h5>Số lượng:</h5>
+                <div class="input-group" style="width: 150px;">
+                    <button class="btn btn-outline-secondary" type="button">-</button>
+                    <input type="text" class="form-control text-center" value="1">
+                    <button class="btn btn-outline-secondary" type="button">+</button>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <button class="btn btn-primary-custom btn-lg me-2" data-product-id="SP001" data-product-name="Sofa Góc Hiện Đại Cao Cấp" data-product-price="15000000" onclick="addToCartAndRedirect(this)">
+                    <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ
+                </button>
+                <button class="btn btn-outline-danger btn-lg">
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+
+            <div class="product-features">
+                <div class="d-flex align-items-center mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <span>Bảo hành 24 tháng</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <span>Miễn phí vận chuyển</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <span>Đổi trả trong 7 ngày</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Description -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#description">Mô tả</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#specs">Thông số</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#reviews">Đánh giá</a>
+                </li>
+            </ul>
+
+            <div class="tab-content p-4 border border-top-0">
+                <div id="description" class="tab-pane active">
+                    <h4>Mô tả sản phẩm</h4>
+                    <p>Sofa góc hiện đại với thiết kế sang trọng, phù hợp với mọi không gian phòng khách. 
+                    Chất liệu vải cao cấp, bền đẹp theo thời gian. Khung gỗ tự nhiên chắc chắn.</p>
+                    <ul>
+                        <li>Thiết kế hiện đại, tinh tế</li>
+                        <li>Chất liệu vải cao cấp, dễ vệ sinh</li>
+                        <li>Khung gỗ tự nhiên bền chắc</li>
+                        <li>Đệm mút êm ái, thoải mái</li>
+                    </ul>
+                </div>
+                <div id="specs" class="tab-pane fade">
+                    <h4>Thông số kỹ thuật</h4>
+                    <table class="table">
+                        <tr><td><strong>Kích thước:</strong></td><td>250 x 180 x 85 cm</td></tr>
+                        <tr><td><strong>Chất liệu:</strong></td><td>Vải nỉ cao cấp</td></tr>
+                        <tr><td><strong>Khung:</strong></td><td>Gỗ tự nhiên</td></tr>
+                        <tr><td><strong>Màu sắc:</strong></td><td>Xám, Nâu, Be</td></tr>
+                        <tr><td><strong>Xuất xứ:</strong></td><td>Việt Nam</td></tr>
+                    </table>
+                </div>
+                <div id="reviews" class="tab-pane fade">
+                    <h4>Đánh giá khách hàng</h4>
+                    <div class="review-item mb-3 p-3 border rounded">
+                        <div class="d-flex justify-content-between">
+                            <strong>Nguyễn Văn A</strong>
+                            <span class="text-warning">★★★★★</span>
+                        </div>
+                        <p class="mb-0 mt-2">Sản phẩm rất đẹp và chất lượng. Giao hàng nhanh!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="mb-4">SẢN PHẨM LIÊN QUAN</h3>
+        </div>
+        @for (int i = 1; i <= 4; i++)
+        {
+            <div class="col-md-3">
+                <div class="product-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="SP@(i.ToString("000"))">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x250/95a5a6/ffffff?text=SP+@i" alt="Sản phẩm">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <a asp-controller="SanPham" asp-action="Details" asp-route-id="SP@(i.ToString("000"))">
+                            <h5 class="product-name">Sản phẩm liên quan @i</h5>
+                        </a>
+                        <div class="product-price">@((i * 2000000).ToString("N0"))đ</div>
+                        <button class="btn-add-cart" data-product-id="SP@(i.ToString("000"))" data-product-name="Sản phẩm liên quan @i" data-product-price="@(i * 2000000)">
+                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

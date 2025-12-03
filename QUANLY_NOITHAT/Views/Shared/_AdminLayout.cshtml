@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Quản trị</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h4><i class="fas fa-cog"></i> QUẢN TRỊ</h4>
+            </div>
+            <nav class="sidebar-nav">
+                <a asp-controller="Admin" asp-action="Dashboard" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a asp-controller="Admin" asp-action="SanPham" class="nav-item">
+                    <i class="fas fa-box"></i> Sản phẩm
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-th-large"></i> Danh mục
+                </a>
+                <a asp-controller="Admin" asp-action="DonHang" class="nav-item">
+                    <i class="fas fa-shopping-cart"></i> Đơn hàng
+                </a>
+                <a asp-controller="Admin" asp-action="KhachHang" class="nav-item">
+                    <i class="fas fa-users"></i> Khách hàng
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-truck"></i> Nhà cung cấp
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-tags"></i> Khuyến mãi
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i> Báo cáo
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-user-shield"></i> Người dùng
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-link" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="admin-user">
+                        <span class="me-3">Xin chào, <strong>Admin</strong></span>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-sm btn-outline-secondary me-2">
+                            <i class="fas fa-home"></i> Trang chủ
+                        </a>
+                        <a asp-controller="Account" asp-action="Logout" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="admin-main">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

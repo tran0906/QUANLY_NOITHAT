@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Truy cập bị từ chối";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <i class="fas fa-ban fa-5x text-danger mb-4"></i>
+            <h1 class="display-4">403</h1>
+            <h2 class="mb-4">TRUY CẬP BỊ TỪ CHỐI</h2>
+            <p class="lead mb-4">Bạn không có quyền truy cập vào trang này.</p>
+            
+            <div class="d-flex justify-content-center gap-3">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary-custom">
+                    <i class="fas fa-home"></i> Về trang chủ
+                </a>
+                <a asp-controller="Account" asp-action="Login" class="btn btn-outline-secondary">
+                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
