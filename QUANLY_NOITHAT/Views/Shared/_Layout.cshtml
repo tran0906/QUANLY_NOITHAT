@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Nội Thất Decor Pro</title>
+    <title>@ViewData["Title"] - Nội Thất DECOR HOLIC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -14,13 +14,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <span><i class="fas fa-phone"></i> Hotline: 1900-xxxx</span>
-                    <span class="ms-3"><i class="fas fa-envelope"></i> info@noithat.vn</span>
+                    <span><i class="fas fa-phone text-warning"></i> Hotline: 1900-xxxx</span>
+                    <span class="ms-3"><i class="fas fa-envelope text-warning"></i> info@noithat.vn</span>
                 </div>
                 <div class="col-md-6 text-end">
-                    <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="row align-items-center py-3">
                 <div class="col-md-3">
                     <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                        <h3 class="mb-0"><i class="fas fa-couch"></i> DECOR PRO</h3>
+                        <h3 class="mb-0"><i class="fas fa-couch"></i> DECOR HOLIC</h3>
                     </a>
                 </div>
                 <div class="col-md-6">
@@ -54,21 +54,61 @@
 
     <!-- Navigation -->
     <nav class="main-nav">
-        <div class="container">
+        <div class="container-fluid px-4">
             <ul class="nav-menu">
-                <li><a asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Trang chủ</a></li>
-                <li class="dropdown">
-                    <a asp-controller="SanPham" asp-action="Index"><i class="fas fa-th-large"></i> Sản phẩm <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="phong-khach">Phòng khách</a></li>
-                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="phong-ngu">Phòng ngủ</a></li>
-                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="phong-bep">Phòng bếp</a></li>
-                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="phong-lam-viec">Phòng làm việc</a></li>
+                <!-- Danh mục sản phẩm dropdown -->
+                <li class="nav-category dropdown">
+                    <a href="#" class="nav-category-btn">
+                        <i class="fas fa-bars me-2"></i> DANH MỤC SẢN PHẨM
+                    </a>
+                    <ul class="dropdown-menu category-dropdown">
+                        <li class="has-submenu">
+                            <a href="#"><i class="fas fa-couch me-2"></i> Đồ trang trí nội thất <i class="fas fa-chevron-right float-end"></i></a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="#"> Bình hút tài lộc gốm sứ <i class="fas fa-chevron-right float-end"></i></a>
+                                    <ul class="submenu submenu-level3">
+                                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="binh-tai-loc-bat-trang"> Bình tài lộc gốm Bát Tràng</a></li>
+                                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="binh-tai-loc-chu-dau"> Bình tài lộc gốm Chu Đậu</a></li>
+                                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="luc-binh-gom-su"> Lục bình gốm sứ vẽ tay</a></li>
+                                    </ul>
+                                </li>
+                                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="binh-gom-su"> Bình gốm sứ trang trí</a></li>
+                                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="tuong-decor"> Thủ công mĩ nghệ</a></li>
+                                <li class="has-submenu">
+                                    <a href="#"> Đồng hồ treo tường trang trí <i class="fas fa-chevron-right float-end"></i></a>
+                                    <ul class="submenu submenu-level3">
+                                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="dong-ho-de-ban"> Đồng hồ để bàn</a></li>
+                                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="tranh-guong-decor"> Tranh gương treo tường</a></li>
+                                    </ul>
+                                </li>
+                                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="am-tra-cao-cap"> Bộ ấm trà cao cấp</a></li>
+                                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="khay-hoa-qua"> Khay hoa quả - Khay mứt tết</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="fas fa-door-open me-2"></i> Đồ decor trang trí phòng <i class="fas fa-chevron-right float-end"></i></a>
+                            <ul class="submenu">
+                                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="trang-tri-phong-ngu"> Trang trí phòng ngủ</a></li>
+                                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="trang-tri-phong-lam-viec"> Trang trí phòng làm việc</a></li>
+                                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="trang-tri-phong-khach"> Trang trí phòng khách</a></li>
+                            </ul>
+                        </li>
+                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="qua-tang-khai-truong"><i class="fas fa-store me-2"></i> Quà tặng khai trương</a></li>
+                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="qua-sinh-nhat"><i class="fas fa-birthday-cake me-2"></i> Quà tặng sinh nhật</a></li>
+                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="qua-tang-tan-gia"><i class="fas fa-home me-2"></i> Quà tặng tân gia cao cấp</a></li>
+                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="qua-tang-doi-tac"><i class="fas fa-handshake me-2"></i> Quà tặng đối tác - Doanh nghiệp</a></li>
+                        <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="qua-cuoi"><i class="fas fa-heart me-2"></i> Quà cưới - Kỉ niệm ngày cưới</a></li>
                     </ul>
                 </li>
-                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="khuyen-mai"><i class="fas fa-tags"></i> Khuyến mãi</a></li>
-                <li><a asp-controller="Home" asp-action="Privacy"><i class="fas fa-info-circle"></i> Giới thiệu</a></li>
-                <li><a href="#"><i class="fas fa-phone-alt"></i> Liên hệ</a></li>
+                <!-- Menu chính ngang -->
+                <li><a asp-controller="Home" asp-action="Index"><i class="fas fa-home me-1"></i> TRANG CHỦ</a></li>
+                <li><a asp-controller="Home" asp-action="Privacy"><i class="fas fa-info-circle me-1"></i> GIỚI THIỆU</a></li>
+                <li><a href="#"><i class="fas fa-video me-1"></i> VIDEO</a></li>
+                <li><a asp-controller="SanPham" asp-action="Index" asp-route-category="ban-chay"><i class="fas fa-fire me-1"></i> SẢN PHẨM BÁN CHẠY</a></li>
+                <li><a href="#"><i class="fas fa-newspaper me-1"></i> TIN TỨC</a></li>
+                <li><a href="#"><i class="fas fa-concierge-bell me-1"></i> DỊCH VỤ</a></li>
+                <li><a href="#"><i class="fas fa-phone-alt me-1"></i> LIÊN HỆ</a></li>
             </ul>
         </div>
     </nav>
@@ -113,7 +153,7 @@
             </div>
             <hr class="my-4">
             <div class="text-center">
-                <p>&copy; 2025 Nội Thất Decor Pro. All rights reserved.</p>
+                <p>&copy; 2025 Nội Thất DECOR HOLIC. All rights reserved.</p>
             </div>
         </div>
     </footer>

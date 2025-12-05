@@ -3,13 +3,216 @@
 }
 
 <!-- Hero Section -->
-<section class="hero-section">
-    <div class="container">
-        <h1>NỘI THẤT CAO CẤP</h1>
-        <p>Tạo không gian sống hoàn hảo với những sản phẩm nội thất hiện đại</p>
-        <a asp-controller="SanPham" asp-action="Index" class="btn btn-primary-custom">Khám phá ngay</a>
+<section class="hero-banner">
+    <div class="hero-image">
+        <img src="~/images/banners/hero-banner.jpg" alt="Trang trí nội thất cao cấp">
+    </div>
+    <div class="hero-content-right">
+        <p class="hero-promo">Trang trí nội thất</p>
+        <h1 class="hero-highlight">DECOR HOLIC</h1>
+        <p class="hero-slogan">Kiến tạo không gian</p>
+        <h2 class="hero-tagline">Nâng tầm phong cách</h2>
+        <a asp-controller="SanPham" asp-action="Index" class="btn-hero">KHÁM PHÁ NGAY</a>
+        <div class="hero-contact">
+            <p><i class="fas fa-globe"></i> decorholic.vn</p>
+            <p><i class="fas fa-phone"></i> 1900 xxxx</p>
+        </div>
     </div>
 </section>
+
+<!-- Product Groups Section -->
+<section class="product-groups-wrapper">
+    <div class="container-fluid px-4">
+        <div class="section-main-title">
+            <h2>DANH SÁCH NHÓM SẢN PHẨM</h2>
+        </div>
+    </div>
+</section>
+
+<!-- Product Group: Đồ Decor Bàn Làm Việc -->
+<section class="product-group-section">
+    <div class="container-fluid px-4">
+        <div class="product-group-header">
+            <h3 class="product-group-title">ĐỒ DECOR BÀN LÀM VIỆC</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="product-group-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="QTV001">
+                        <div class="product-group-image">
+                            <img src="~/images/products/qtv001.jpg" alt="Quà Tặng Decor">
+                            <div class="product-group-overlay">
+                                <span class="btn-detail">Chi tiết</span>
+                                <span class="btn-quick-view">Xem nhanh</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-group-info">
+                        <h5 class="product-group-name">Quà Tặng Decor Hợp Sức QTV001</h5>
+                        <div class="product-group-price">
+                            <span class="price-range">1.800.000 <sup>đ</sup> – 2.200.000 <sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-group-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="QTV005">
+                        <div class="product-group-image">
+                            <img src="~/images/products/qtv005.jpg" alt="Khay Bút Cao Cấp">
+                            <div class="product-group-overlay">
+                                <span class="btn-detail">Chi tiết</span>
+                                <span class="btn-quick-view">Xem nhanh</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-group-info">
+                        <h5 class="product-group-name">Khay Bút Cao Cấp "Thuận Buồm Xuôi Gió" QTV005-A2</h5>
+                        <div class="product-group-price">
+                            <span class="price-single">2.080.000 <sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-group-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="QTV006">
+                        <div class="product-group-image">
+                            <img src="~/images/products/qtv006.jpg" alt="Cây Pha Lê">
+                            <div class="product-group-overlay">
+                                <span class="btn-detail">Chi tiết</span>
+                                <span class="btn-quick-view">Xem nhanh</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-group-info">
+                        <h5 class="product-group-name">Cây Pha lê tài lộc QTV006-A1</h5>
+                        <div class="product-group-price">
+                            <span class="price-range">1.250.000 <sup>đ</sup> – 2.000.000 <sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-group-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="QTV009">
+                        <div class="product-group-image">
+                            <img src="~/images/products/qtv009.jpg" alt="Khay Đựng Bút">
+                            <div class="product-group-overlay">
+                                <span class="btn-detail">Chi tiết</span>
+                                <span class="btn-quick-view">Xem nhanh</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-group-info">
+                        <h5 class="product-group-name">Khay Đựng Bút Mã Đáo Thành Công QTV009-A6</h5>
+                        <div class="product-group-price">
+                            <span class="price-range">1.450.000 <sup>đ</sup> – 1.650.000 <sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a asp-controller="SanPham" asp-action="Index" asp-route-category="decor-ban-lam-viec" class="btn-view-all">
+                Xem tất cả <i class="fas fa-chevron-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Product Group: Bình Hút Tài Lộc -->
+<section class="product-group-section bg-light">
+    <div class="container-fluid px-4">
+        <div class="product-group-header">
+            <h3 class="product-group-title">BÌNH HÚT TÀI LỘC GỐM SỨ</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="product-group-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="BTL001">
+                        <div class="product-group-image">
+                            <img src="~/images/products/btl001.jpg" alt="Bình Tài Lộc">
+                            <div class="product-group-overlay">
+                                <span class="btn-detail">Chi tiết</span>
+                                <span class="btn-quick-view">Xem nhanh</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-group-info">
+                        <h5 class="product-group-name">Bình Tài Lộc Gốm Bát Tràng BTL001</h5>
+                        <div class="product-group-price">
+                            <span class="price-range">2.500.000 <sup>đ</sup> – 3.500.000 <sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-group-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="BTL002">
+                        <div class="product-group-image">
+                            <img src="~/images/products/btl002.jpg" alt="Bình Chu Đậu">
+                            <div class="product-group-overlay">
+                                <span class="btn-detail">Chi tiết</span>
+                                <span class="btn-quick-view">Xem nhanh</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-group-info">
+                        <h5 class="product-group-name">Bình Tài Lộc Gốm Chu Đậu BTL002</h5>
+                        <div class="product-group-price">
+                            <span class="price-single">3.200.000 <sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-group-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="LB001">
+                        <div class="product-group-image">
+                            <img src="~/images/products/lb001.jpg" alt="Lục Bình">
+                            <div class="product-group-overlay">
+                                <span class="btn-detail">Chi tiết</span>
+                                <span class="btn-quick-view">Xem nhanh</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-group-info">
+                        <h5 class="product-group-name">Lục Bình Gốm Sứ Vẽ Tay LB001</h5>
+                        <div class="product-group-price">
+                            <span class="price-range">4.500.000 <sup>đ</sup> – 6.000.000 <sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-group-card">
+                    <a asp-controller="SanPham" asp-action="Details" asp-route-id="BTL003">
+                        <div class="product-group-image">
+                            <img src="~/images/products/btl003.jpg" alt="Bình Phong Thủy">
+                            <div class="product-group-overlay">
+                                <span class="btn-detail">Chi tiết</span>
+                                <span class="btn-quick-view">Xem nhanh</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-group-info">
+                        <h5 class="product-group-name">Bình Phong Thủy Cao Cấp BTL003</h5>
+                        <div class="product-group-price">
+                            <span class="price-range">2.800.000 <sup>đ</sup> – 3.800.000 <sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a asp-controller="SanPham" asp-action="Index" asp-route-category="binh-tai-loc" class="btn-view-all">
+                Xem tất cả <i class="fas fa-chevron-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 
 <!-- Categories Section -->
 <section class="py-5">
@@ -20,7 +223,7 @@
         <div class="row">
             <div class="col-md-3">
                 <a asp-controller="SanPham" asp-action="Index" asp-route-category="phong-khach" class="category-card">
-                    <img src="https://via.placeholder.com/400x300/34495e/ffffff?text=Phong+Khach" alt="Phòng khách">
+                    <img src="~/images/categories/phong-khach.jpg" alt="Phòng khách">
                     <div class="category-overlay">
                         <span>PHÒNG KHÁCH</span>
                     </div>
@@ -28,7 +231,7 @@
             </div>
             <div class="col-md-3">
                 <a asp-controller="SanPham" asp-action="Index" asp-route-category="phong-ngu" class="category-card">
-                    <img src="https://via.placeholder.com/400x300/e67e22/ffffff?text=Phong+Ngu" alt="Phòng ngủ">
+                    <img src="~/images/categories/phong-ngu.jpg" alt="Phòng ngủ">
                     <div class="category-overlay">
                         <span>PHÒNG NGỦ</span>
                     </div>
@@ -36,7 +239,7 @@
             </div>
             <div class="col-md-3">
                 <a asp-controller="SanPham" asp-action="Index" asp-route-category="phong-bep" class="category-card">
-                    <img src="https://via.placeholder.com/400x300/3498db/ffffff?text=Phong+Bep" alt="Phòng bếp">
+                    <img src="~/images/categories/phong-bep.jpg" alt="Phòng bếp">
                     <div class="category-overlay">
                         <span>PHÒNG BẾP</span>
                     </div>
@@ -44,7 +247,7 @@
             </div>
             <div class="col-md-3">
                 <a asp-controller="SanPham" asp-action="Index" asp-route-category="phong-lam-viec" class="category-card">
-                    <img src="https://via.placeholder.com/400x300/27ae60/ffffff?text=Phong+Lam+Viec" alt="Phòng làm việc">
+                    <img src="~/images/categories/phong-lam-viec.jpg" alt="Phòng làm việc">
                     <div class="category-overlay">
                         <span>PHÒNG LÀM VIỆC</span>
                     </div>
@@ -65,7 +268,7 @@
                 <div class="product-card">
                     <a asp-controller="SanPham" asp-action="Details" asp-route-id="SP001">
                         <div class="product-image">
-                            <img src="https://via.placeholder.com/300x250/95a5a6/ffffff?text=Sofa" alt="Sofa">
+                            <img src="~/images/products/sp001.jpg" alt="Sofa">
                             <span class="product-badge">-20%</span>
                         </div>
                     </a>
@@ -87,7 +290,7 @@
                 <div class="product-card">
                     <a asp-controller="SanPham" asp-action="Details" asp-route-id="SP002">
                         <div class="product-image">
-                            <img src="https://via.placeholder.com/300x250/7f8c8d/ffffff?text=Giuong" alt="Giường">
+                            <img src="~/images/products/sp002.jpg" alt="Giường">
                             <span class="product-badge">HOT</span>
                         </div>
                     </a>
@@ -108,7 +311,7 @@
                 <div class="product-card">
                     <a asp-controller="SanPham" asp-action="Details" asp-route-id="SP003">
                         <div class="product-image">
-                            <img src="https://via.placeholder.com/300x250/bdc3c7/ffffff?text=Ban+An" alt="Bàn ăn">
+                            <img src="~/images/products/sp003.jpg" alt="Bàn ăn">
                         </div>
                     </a>
                     <div class="product-info">
@@ -128,7 +331,7 @@
                 <div class="product-card">
                     <a asp-controller="SanPham" asp-action="Details" asp-route-id="SP004">
                         <div class="product-image">
-                            <img src="https://via.placeholder.com/300x250/ecf0f1/333333?text=Tu+Quan+Ao" alt="Tủ quần áo">
+                            <img src="~/images/products/sp004.jpg" alt="Tủ quần áo">
                             <span class="product-badge">NEW</span>
                         </div>
                     </a>
@@ -198,17 +401,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-3">
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; border-radius: 10px; color: white;">
+                <div class="promo-banner" style="background: linear-gradient(135deg, #8B4513 0%, #5D2E0C 100%);">
                     <h3>KHUYẾN MÃI ĐẶC BIỆT</h3>
                     <p>Giảm giá lên đến 30% cho sản phẩm phòng khách</p>
-                    <a asp-controller="SanPham" asp-action="Index" asp-route-category="khuyen-mai" class="btn btn-light">Xem ngay</a>
+                    <a asp-controller="SanPham" asp-action="Index" asp-route-category="khuyen-mai" class="btn">Xem ngay</a>
                 </div>
             </div>
             <div class="col-md-6 mb-3">
-                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 40px; border-radius: 10px; color: white;">
+                <div class="promo-banner" style="background: linear-gradient(135deg, #2C5530 0%, #1A3A1D 100%);">
                     <h3>BỘ SƯU TẬP MỚI</h3>
                     <p>Khám phá bộ sưu tập nội thất hiện đại 2025</p>
-                    <a asp-controller="SanPham" asp-action="Index" class="btn btn-light">Khám phá</a>
+                    <a asp-controller="SanPham" asp-action="Index" class="btn">Khám phá</a>
                 </div>
             </div>
         </div>

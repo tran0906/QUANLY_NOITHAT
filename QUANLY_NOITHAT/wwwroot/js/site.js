@@ -116,6 +116,9 @@ function submitOrder() {
 document.addEventListener('DOMContentLoaded', function() {
     loadCart();
     
+    // Menu dropdown click handling
+    initMenuDropdown();
+    
     // Add event listeners for "Add to Cart" buttons
     document.querySelectorAll('.btn-add-cart').forEach(button => {
         button.addEventListener('click', function(e) {
@@ -180,3 +183,76 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+
+// Menu Dropdown Click Handling
+function initMenuDropdown() {
+    // Mega Menu Hover Handling
+    initMegaMenu();
+}
+
+// Mega Menu Hover Handling
+function initMegaMenu() {
+    // Cột 1: Hover vào danh mục chính -> hiển thị danh mục con tương ứng
+    const categoryItems = document.querySelectorAll('.mega-category-item');
+    categoryItems.forEach(function(item) {
+        item.addEventListener('mouseenter', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Remove active từ tất cả category items
+            categoryItems.forEach(function(el) {
+                el.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            // Ẩn tất cả subcategory lists
+            document.querySelectorAll('.mega-subcategory-list').forEach(function(list) {
+                list.style.display = 'none';
+            });
+            
+            // Hiển thị subcategory list tương ứng
+            const targetList = document.querySelector('.mega-subcategory-list[data-parent="' + category + '"]');
+            if (targetList) {
+                targetList.style.display = 'block';
+                // Set active cho item đầu tiên
+                const firstSubItem = targetList.querySelector('.mega-sub-item');
+                if (firstSubItem) {
+                    document.querySelectorAll('.mega-sub-item').forEach(function(el) {
+                        el.classList.remove('active');
+                    });
+                    firstSubItem.classList.add('active');
+                }
+            }
+        });
+    });
+    
+    // Cột 2: Hover vào danh mục con -> hiển thị chi tiết tương ứng
+    const subItems = document.querySelectorAll('.mega-sub-item');
+    subItems.forEach(function(item) {
+        item.addEventListener('mouseenter', function() {
+            const subCategory = this.getAttribute('data-sub');
+            
+            // Remove active từ tất cả sub items trong cùng list
+            const parentList = this.closest('.mega-subcategory-list');
+            if (parentList) {
+                parentList.querySelectorAll('.mega-sub-item').forEach(function(el) {
+                    el.classList.remove('active');
+                });
+            }
+            this.classList.add('active');
+            
+            // Ẩn tất cả detail lists
+            document.querySelectorAll('.mega-detail-list').forEach(function(list) {
+                list.style.display = 'none';
+            });
+            
+            // Hiển thị detail list tương ứng
+            if (subCategory) {
+                const targetDetail = document.querySelector('.mega-detail-list[data-detail="' + subCategory + '"]');
+                if (targetDetail) {
+                    targetDetail.style.display = 'block';
+                }
+            }
+        });
+    });
+}
